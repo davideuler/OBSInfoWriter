@@ -1,0 +1,15 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=git
+command=C:/Program Files/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/crosscables-populate-prefix/tmp/crosscables-populate-gitclone.cmake
+source_dir=C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-src
+work_dir=C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps
+repository=https://github.com/partouf/Crosscables.git
+remote=origin
+init_submodules=TRUE
+recurse_submodules=--recursive
+submodules=
+CMP0097=NEW
+      

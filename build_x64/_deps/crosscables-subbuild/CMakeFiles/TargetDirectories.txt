@@ -1,0 +1,3 @@
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/crosscables-populate.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/ALL_BUILD.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/ZERO_CHECK.dir

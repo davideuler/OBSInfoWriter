@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1763D3AA-3BD2-3EF7-AF53-0E042D14066C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>Jumpropes</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Jumpropes.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Jumpropes</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Jumpropes.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Jumpropes</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Jumpropes.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Jumpropes</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Jumpropes.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Jumpropes</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;DEBUG;_DEBUG;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;DEBUG;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes;C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-src/Jumpropes/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter -BC:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64 --check-stamp-file C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-build/Jumpropes/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-src/Jumpropes/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter -BC:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64 --check-stamp-file C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-build/Jumpropes/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-src/Jumpropes/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter -BC:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64 --check-stamp-file C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-build/Jumpropes/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-src/Jumpropes/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter -BC:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64 --check-stamp-file C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-build/Jumpropes/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Jumpropes\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\BaseSocket.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ClientSocket.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ServerSocket.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedConnection.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedServer.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedSender.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Initialize.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\URI.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Common\HttpConnection.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Common\HttpClient.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Functions.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\NetAddress.cpp" />
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\LookupCache.cpp" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\BaseSocket.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ClientSocket.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Common\HttpClient.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Common\HttpConnection.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Common\HttpDownloader.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Defines.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Functions.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Initialize.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\LookupCache.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\NetAddress.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ServerSocket.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedConnection.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedSender.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedServer.h" />
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\URI.h" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\ZERO_CHECK.vcxproj">
+      <Project>{A03C74A6-1CD9-3495-A52C-2AE7FFD89415}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-build\Groundfloor\Groundfloor.vcxproj">
+      <Project>{23B6888C-139C-3EA8-81ED-7DEF926752D2}</Project>
+      <Name>Groundfloor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

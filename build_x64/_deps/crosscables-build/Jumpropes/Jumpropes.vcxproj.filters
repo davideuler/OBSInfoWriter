@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\BaseSocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ClientSocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ServerSocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedConnection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedSender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Initialize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\URI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Common\HttpConnection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Common\HttpClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\NetAddress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\LookupCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\BaseSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ClientSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Common\HttpClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Common\HttpConnection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Common\HttpDownloader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\Initialize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\LookupCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\NetAddress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ServerSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedConnection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedSender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\ThreadedServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\URI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Jumpropes\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8B4B5C17-CACF-30D7-A504-CEAFAD321214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{70B0A0BA-9DF0-3616-9C54-15CD7661016E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

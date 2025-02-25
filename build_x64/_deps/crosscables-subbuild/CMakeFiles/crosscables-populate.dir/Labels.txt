@@ -1,0 +1,14 @@
+# Target labels
+ crosscables-populate
+# Source files and their labels
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/crosscables-populate
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/a363c7e5583188a01d9a4595ff0809c1/crosscables-populate.rule
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/b7eb0aac98e2f6885e4a97d1988acfd8/crosscables-populate-complete.rule
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/ceb1b4f8e13145d8770f4e873bab9921/crosscables-populate-build.rule
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/ceb1b4f8e13145d8770f4e873bab9921/crosscables-populate-configure.rule
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/ceb1b4f8e13145d8770f4e873bab9921/crosscables-populate-download.rule
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/ceb1b4f8e13145d8770f4e873bab9921/crosscables-populate-install.rule
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/ceb1b4f8e13145d8770f4e873bab9921/crosscables-populate-mkdir.rule
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/ceb1b4f8e13145d8770f4e873bab9921/crosscables-populate-patch.rule
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/ceb1b4f8e13145d8770f4e873bab9921/crosscables-populate-test.rule
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-subbuild/CMakeFiles/ceb1b4f8e13145d8770f4e873bab9921/crosscables-populate-update.rule

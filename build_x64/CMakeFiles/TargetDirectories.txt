@@ -1,0 +1,10 @@
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/CMakeFiles/OBSInfoWriter.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/CMakeFiles/INSTALL.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/CMakeFiles/ALL_BUILD.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-build/CMakeFiles/INSTALL.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-build/Groundfloor/CMakeFiles/Groundfloor.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-build/Groundfloor/CMakeFiles/INSTALL.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-build/Jumpropes/CMakeFiles/Jumpropes.dir
+C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64/_deps/crosscables-build/Jumpropes/CMakeFiles/INSTALL.dir

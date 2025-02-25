@@ -13,6 +13,9 @@
 #include <windows.h>
 #endif
 
+// 在文件顶部的全局区域添加变量声明（如果它应该是全局变量）
+extern InfoWriter* g_infoWriter;
+
 const char *infowriter_idname = "Info Writer";
 const char *logfile_filter = "All formats (*.*)";
 const char *setting_automaticoutputextension = "automaticoutputextension";
@@ -423,7 +426,9 @@ void obsstudio_infowriter_frontend_event_callback(enum obs_frontend_event event,
 void *obstudio_infowriter_create(obs_data_t *settings, obs_source_t *source)
 {
 	InfoWriter *Writer = new InfoWriter();
-
+	// 将新创建的 Writer 赋值给全局变量
+	g_infoWriter = Writer;
+	
 	UNUSED_PARAMETER(settings);
 
 	obs_hotkey_register_source(source, "InfoWriter", "Hotkey 1",
@@ -564,7 +569,7 @@ void obstudio_infowriter_get_defaults(obs_data_t *settings)
 	obs_data_set_default_bool(settings, setting_syncnameandpathwithvideo,
 				  false);
 	obs_data_set_default_string(settings, setting_automaticoutputextension, "txt");
-	obs_data_set_default_string(settings, setting_file, "/tmp/log.txt");
+	obs_data_set_default_string(settings, setting_file, "log.txt");
 	obs_data_set_default_string(settings, setting_format, "%d:%02d:%02d");
 
 	obs_data_set_default_string(settings, setting_hotkey1text, "");
@@ -683,12 +688,20 @@ void obstudio_infowriter_update(void *data, obs_data_t *settings)
 
 	// 读取是否启用全局键盘记录
 	bool record_all_keys = obs_data_get_bool(settings, "record_all_keys");
-	
+
 	// 根据设置启用或禁用键盘记录
+#ifdef _WIN32
+	if (record_all_keys) {
+		install_global_keyboard_hook(Writer);
+	} else {
+		uninstall_global_keyboard_hook();
+	}
+#endif
+
+	// 同时处理普通热键注册
 	static bool keys_registered = false;
-	
 	if (record_all_keys && !keys_registered) {
-		register_all_key_hotkeys(g_infoWriter);
+		register_all_key_hotkeys(Writer);
 		keys_registered = true;
 	} else if (!record_all_keys && keys_registered) {
 		unregister_all_key_hotkeys();
@@ -723,6 +736,11 @@ void obstudio_infowriter_destroy(void *data)
 
 		// 注销键盘监听
 		unregister_all_key_hotkeys();
+
+		// 清除全局变量引用
+		if (g_infoWriter == Writer) {
+			g_infoWriter = nullptr;
+		}
 
 		delete Writer;
 	}

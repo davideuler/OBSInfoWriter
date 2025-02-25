@@ -1,0 +1,118 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"build_x64/_deps/crosscables-src/Jumpropes/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 34,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 35,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/crosscables-build/Jumpropes/Debug/Jumpropes.lib"
+			],
+			"targetId" : "Jumpropes::@42ac850ce78ce1f82442",
+			"targetIndex" : 3,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"cxxModuleBmiTarget" : 
+			{
+				"id" : "Jumpropes::@42ac850ce78ce1f82442",
+				"index" : 3
+			},
+			"destination" : "lib",
+			"type" : "cxxModuleBmi"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/crosscables-build/Jumpropes/Debug/Jumpropes.lib"
+			],
+			"targetId" : "Jumpropes::@42ac850ce78ce1f82442",
+			"targetIndex" : 3,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/Jumpropes",
+			"fileSetDirectories" : 
+			[
+				"build_x64/_deps/crosscables-src/Jumpropes"
+			],
+			"fileSetName" : "publicheaders",
+			"fileSetTarget" : 
+			{
+				"id" : "Jumpropes::@42ac850ce78ce1f82442",
+				"index" : 3
+			},
+			"fileSetType" : "HEADERS",
+			"paths" : 
+			[
+				"build_x64/_deps/crosscables-src/Jumpropes/BaseSocket.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/ClientSocket.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/Defines.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/Functions.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/Initialize.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/LookupCache.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/NetAddress.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/ServerSocket.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/ThreadedConnection.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/ThreadedSender.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/ThreadedServer.h",
+				"build_x64/_deps/crosscables-src/Jumpropes/URI.h",
+				{
+					"from" : "build_x64/_deps/crosscables-src/Jumpropes/Common/HttpClient.h",
+					"to" : "Common/HttpClient.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Jumpropes/Common/HttpConnection.h",
+					"to" : "Common/HttpConnection.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Jumpropes/Common/HttpDownloader.h",
+					"to" : "Common/HttpDownloader.h"
+				}
+			],
+			"type" : "fileSet"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/crosscables-build/Jumpropes",
+		"source" : "build_x64/_deps/crosscables-src/Jumpropes"
+	}
+}

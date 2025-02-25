@@ -13,6 +13,8 @@
 #include "OutputFormat/OutputFormat.CSV.h"
 #include "OutputFormat/OutputFormat.SRT.h"
 
+InfoWriter* g_infoWriter = nullptr;
+
 const char *c_TimestampNotation = "%Y-%m-%d %H:%M:%S";
 
 InfoWriter::InfoWriter() : Settings()

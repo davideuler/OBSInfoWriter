@@ -1,0 +1,43 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"build_x64/_deps/crosscables-src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "Groundfloor::@8bc3218c9d2e05852978"
+		},
+		{
+			"id" : "Jumpropes::@42ac850ce78ce1f82442"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "CMakePredefinedTargets"
+	},
+	"id" : "ALL_BUILD::@47d8e3535ceeddc0e195",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "_deps/crosscables-build",
+		"source" : "build_x64/_deps/crosscables-src"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

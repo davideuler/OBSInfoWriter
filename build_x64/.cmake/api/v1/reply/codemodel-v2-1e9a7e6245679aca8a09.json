@@ -1,0 +1,660 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-720a55da2c4d98cde3bf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build-Debug-566ce13665e53914ea2e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build/Groundfloor",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build.Groundfloor-Debug-912f6e6551da71843975.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src/Groundfloor",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build/Jumpropes",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build.Jumpropes-Debug-1a21b4c9acacc3ca3f8c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src/Jumpropes",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "OBSInfoWriter",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"name" : "Crosscables",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-3549a12e4f19280938f8.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@47d8e3535ceeddc0e195",
+					"jsonFile" : "target-ALL_BUILD-Debug-4573b66ce4c205972285.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Groundfloor::@8bc3218c9d2e05852978",
+					"jsonFile" : "target-Groundfloor-Debug-e8c22ea9d96fc83355b8.json",
+					"name" : "Groundfloor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Jumpropes::@42ac850ce78ce1f82442",
+					"jsonFile" : "target-Jumpropes-Debug-3688bc8cadba5284cc8d.json",
+					"name" : "Jumpropes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OBSInfoWriter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OBSInfoWriter-Debug-eb418c458d3677ffdc87.json",
+					"name" : "OBSInfoWriter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-9a7cb76024e32677f250.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-1cae633a5ed13d070338.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build-Release-566ce13665e53914ea2e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build/Groundfloor",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build.Groundfloor-Release-e86501dd9b948ea1121f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src/Groundfloor",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build/Jumpropes",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build.Jumpropes-Release-f1fcaf905598b7b8fd59.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src/Jumpropes",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "OBSInfoWriter",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"name" : "Crosscables",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-3549a12e4f19280938f8.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@47d8e3535ceeddc0e195",
+					"jsonFile" : "target-ALL_BUILD-Release-4573b66ce4c205972285.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Groundfloor::@8bc3218c9d2e05852978",
+					"jsonFile" : "target-Groundfloor-Release-fa8e40dd42df5a531414.json",
+					"name" : "Groundfloor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Jumpropes::@42ac850ce78ce1f82442",
+					"jsonFile" : "target-Jumpropes-Release-a39810de2c5997b05249.json",
+					"name" : "Jumpropes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OBSInfoWriter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OBSInfoWriter-Release-5d51c7d977422c6b86a3.json",
+					"name" : "OBSInfoWriter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-9a7cb76024e32677f250.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-MinSizeRel-f03a9e2ee08167a0622e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build-MinSizeRel-566ce13665e53914ea2e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build/Groundfloor",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build.Groundfloor-MinSizeRel-d5b191c64323621c071e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src/Groundfloor",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build/Jumpropes",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build.Jumpropes-MinSizeRel-a9db3bff44deeb8194e3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src/Jumpropes",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "OBSInfoWriter",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"name" : "Crosscables",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-3549a12e4f19280938f8.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@47d8e3535ceeddc0e195",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-4573b66ce4c205972285.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Groundfloor::@8bc3218c9d2e05852978",
+					"jsonFile" : "target-Groundfloor-MinSizeRel-aa5524850bc53bd9ea32.json",
+					"name" : "Groundfloor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Jumpropes::@42ac850ce78ce1f82442",
+					"jsonFile" : "target-Jumpropes-MinSizeRel-834780b5f6277fe37a9a.json",
+					"name" : "Jumpropes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OBSInfoWriter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OBSInfoWriter-MinSizeRel-88ed5af2adb25ee471c0.json",
+					"name" : "OBSInfoWriter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-9a7cb76024e32677f250.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-514a8352ead95d64bb1c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build-RelWithDebInfo-566ce13665e53914ea2e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build/Groundfloor",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build.Groundfloor-RelWithDebInfo-8851ad3adb4a62c07345.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src/Groundfloor",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "_deps/crosscables-build/Jumpropes",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.crosscables-build.Jumpropes-RelWithDebInfo-2453e4e9224e7c48f77f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "build_x64/_deps/crosscables-src/Jumpropes",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "OBSInfoWriter",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"name" : "Crosscables",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-3549a12e4f19280938f8.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@47d8e3535ceeddc0e195",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-4573b66ce4c205972285.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Groundfloor::@8bc3218c9d2e05852978",
+					"jsonFile" : "target-Groundfloor-RelWithDebInfo-5202df6a7dee83feab1a.json",
+					"name" : "Groundfloor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Jumpropes::@42ac850ce78ce1f82442",
+					"jsonFile" : "target-Jumpropes-RelWithDebInfo-722de1f59bd3e4971afa.json",
+					"name" : "Jumpropes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OBSInfoWriter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OBSInfoWriter-RelWithDebInfo-136a9ec3d2141a1b2ebe.json",
+					"name" : "OBSInfoWriter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-9a7cb76024e32677f250.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter/build_x64",
+		"source" : "C:/Users/Administrator/Documents/obs-studio/plugins/OBSInfoWriter"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

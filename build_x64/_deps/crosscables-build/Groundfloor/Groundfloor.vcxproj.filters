@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\Freeable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\String.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\Vector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\Functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\Thread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\CallbackThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\Callable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\Lockable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\FifoVector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\ThreadedBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\Directory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\GarbageCollector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\StringLookup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\Callbacks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\Property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BFields.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BValue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BRecords.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\FileWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\CsvSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\StringVector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\BaseCommunicator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\FileCommunicator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\MemFuncs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\Initialize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BAttribute.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\RemoteSquirrel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\Callable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\Defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\Freeable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\Initialize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\Lockable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Atoms\MemFuncs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\AbstractSquirrel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BAttribute.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BFields.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BRecords.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\BValue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Bookshelfs\RemoteSquirrel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\CallbackThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\CsvSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\Directory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\FifoVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\FileCommunicator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\FileWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\Functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\GarbageCollector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\StringLookup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\Thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Materials\ThreadedBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\BaseCommunicator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\Callbacks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\Property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\StringVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\Molecules\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-src\Groundfloor\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8B4B5C17-CACF-30D7-A504-CEAFAD321214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{70B0A0BA-9DF0-3616-9C54-15CD7661016E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

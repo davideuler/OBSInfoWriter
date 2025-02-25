@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\ceb1b4f8e13145d8770f4e873bab9921\crosscables-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\ceb1b4f8e13145d8770f4e873bab9921\crosscables-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\ceb1b4f8e13145d8770f4e873bab9921\crosscables-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\ceb1b4f8e13145d8770f4e873bab9921\crosscables-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\ceb1b4f8e13145d8770f4e873bab9921\crosscables-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\ceb1b4f8e13145d8770f4e873bab9921\crosscables-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\ceb1b4f8e13145d8770f4e873bab9921\crosscables-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\ceb1b4f8e13145d8770f4e873bab9921\crosscables-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\b7eb0aac98e2f6885e4a97d1988acfd8\crosscables-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\a363c7e5583188a01d9a4595ff0809c1\crosscables-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Administrator\Documents\obs-studio\plugins\OBSInfoWriter\build_x64\_deps\crosscables-subbuild\CMakeFiles\crosscables-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{96F1F88B-C7F7-37C3-860F-A477C4202D38}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

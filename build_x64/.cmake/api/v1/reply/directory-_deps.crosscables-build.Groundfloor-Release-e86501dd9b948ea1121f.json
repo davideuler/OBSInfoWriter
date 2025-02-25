@@ -1,0 +1,238 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"build_x64/_deps/crosscables-src/Groundfloor/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 49,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 50,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/crosscables-build/Groundfloor/Release/Groundfloor.lib"
+			],
+			"targetId" : "Groundfloor::@8bc3218c9d2e05852978",
+			"targetIndex" : 2,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"cxxModuleBmiTarget" : 
+			{
+				"id" : "Groundfloor::@8bc3218c9d2e05852978",
+				"index" : 2
+			},
+			"destination" : "lib",
+			"type" : "cxxModuleBmi"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/crosscables-build/Groundfloor/Release/Groundfloor.lib"
+			],
+			"targetId" : "Groundfloor::@8bc3218c9d2e05852978",
+			"targetIndex" : 2,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/Groundfloor",
+			"fileSetDirectories" : 
+			[
+				"build_x64/_deps/crosscables-src/Groundfloor"
+			],
+			"fileSetName" : "publicheaders",
+			"fileSetTarget" : 
+			{
+				"id" : "Groundfloor::@8bc3218c9d2e05852978",
+				"index" : 2
+			},
+			"fileSetType" : "HEADERS",
+			"paths" : 
+			[
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Atoms/Callable.h",
+					"to" : "Atoms/Callable.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Atoms/Defines.h",
+					"to" : "Atoms/Defines.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Atoms/Freeable.h",
+					"to" : "Atoms/Freeable.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Atoms/Initialize.h",
+					"to" : "Atoms/Initialize.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Atoms/Lockable.h",
+					"to" : "Atoms/Lockable.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Atoms/MemFuncs.h",
+					"to" : "Atoms/MemFuncs.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/AbstractSquirrel.h",
+					"to" : "Bookshelfs/AbstractSquirrel.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/BAttribute.h",
+					"to" : "Bookshelfs/BAttribute.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/BField.h",
+					"to" : "Bookshelfs/BField.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/BFields.h",
+					"to" : "Bookshelfs/BFields.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/BFunctions.h",
+					"to" : "Bookshelfs/BFunctions.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/BNode.h",
+					"to" : "Bookshelfs/BNode.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/BRecord.h",
+					"to" : "Bookshelfs/BRecord.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/BRecords.h",
+					"to" : "Bookshelfs/BRecords.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/BTable.h",
+					"to" : "Bookshelfs/BTable.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/BValue.h",
+					"to" : "Bookshelfs/BValue.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Bookshelfs/RemoteSquirrel.h",
+					"to" : "Bookshelfs/RemoteSquirrel.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/CallbackThread.h",
+					"to" : "Materials/CallbackThread.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/CsvSettings.h",
+					"to" : "Materials/CsvSettings.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/Directory.h",
+					"to" : "Materials/Directory.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/FifoVector.h",
+					"to" : "Materials/FifoVector.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/FileCommunicator.h",
+					"to" : "Materials/FileCommunicator.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/FileWriter.h",
+					"to" : "Materials/FileWriter.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/Functions.h",
+					"to" : "Materials/Functions.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/GarbageCollector.h",
+					"to" : "Materials/GarbageCollector.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/Logger.h",
+					"to" : "Materials/Logger.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/Resources.h",
+					"to" : "Materials/Resources.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/StringLookup.h",
+					"to" : "Materials/StringLookup.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/Thread.h",
+					"to" : "Materials/Thread.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Materials/ThreadedBuffer.h",
+					"to" : "Materials/ThreadedBuffer.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Molecules/BaseCommunicator.h",
+					"to" : "Molecules/BaseCommunicator.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Molecules/Callbacks.h",
+					"to" : "Molecules/Callbacks.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Molecules/Property.h",
+					"to" : "Molecules/Property.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Molecules/String.h",
+					"to" : "Molecules/String.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Molecules/StringVector.h",
+					"to" : "Molecules/StringVector.h"
+				},
+				{
+					"from" : "build_x64/_deps/crosscables-src/Groundfloor/Molecules/Vector.h",
+					"to" : "Molecules/Vector.h"
+				}
+			],
+			"type" : "fileSet"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/crosscables-build/Groundfloor",
+		"source" : "build_x64/_deps/crosscables-src/Groundfloor"
+	}
+}

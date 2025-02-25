@@ -1,4 +1,3 @@
-
 // note: the external symbols are defined in obs-module.h
 
 #include <obs-module.h>
@@ -7,6 +6,12 @@
 #include <Groundfloor/Materials/Functions.h>
 #include <Groundfloor/Atoms/Defines.h>
 #include "InfoWriter.h"
+#include <obs-hotkey.h>
+#include <util/platform.h>
+
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 const char *infowriter_idname = "Info Writer";
 const char *logfile_filter = "All formats (*.*)";
@@ -33,6 +38,151 @@ const char *setting_shouldlogscenechanges = "logscenechanges";
 const char *setting_shouldlogstreaming = "logstreaming";
 const char *setting_shouldlogabsolutetime = "logabsolutetime";
 const char *setting_shouldloghotkeyspecifics = "loghotkeyspecifics";
+
+// 定义键盘按键的最大数量
+#define MAX_KEYS 256
+
+// 为每个可能的按键创建热键ID
+static obs_hotkey_id key_hotkeys[MAX_KEYS];
+static const char *key_names[MAX_KEYS];
+
+// 初始化键名数组
+static void init_key_names()
+{
+	// 初始化所有键名为NULL
+	memset(key_names, 0, sizeof(key_names));
+	
+	// 设置常用键的名称
+	key_names['A'] = "A";
+	key_names['B'] = "B";
+	key_names['C'] = "C";
+	// ... 其他字母键 ...
+	key_names['Z'] = "Z";
+	
+	key_names['0'] = "0";
+	key_names['1'] = "1";
+	// ... 其他数字键 ...
+	key_names['9'] = "9";
+	
+	key_names[OBS_KEY_SPACE] = "Space";
+	key_names[OBS_KEY_RETURN] = "Enter";
+	key_names[OBS_KEY_ESCAPE] = "Escape";
+	key_names[OBS_KEY_TAB] = "Tab";
+	// ... 其他特殊键 ...
+}
+
+// 按键回调函数
+static void key_callback(void *data, obs_hotkey_id id, obs_hotkey_t *hotkey, bool pressed)
+{
+	if (!pressed)
+		return;
+	
+	InfoWriter *writer = static_cast<InfoWriter *>(data);
+	if (!writer || !writer->HasStarted())
+		return;
+	
+	// 找出是哪个键被按下
+	int key_index = -1;
+	for (int i = 0; i < MAX_KEYS; i++) {
+		if (key_hotkeys[i] == id) {
+			key_index = i;
+			break;
+		}
+	}
+	
+	if (key_index >= 0) {
+		const char *key_name = key_names[key_index] ? key_names[key_index] : "Unknown";
+		std::string message = "Key pressed: ";
+		message += key_name;
+		
+		// 记录按键到文件
+		writer->WriteInfo(message);
+	}
+}
+
+// 在插件加载时注册所有按键热键
+static void register_all_key_hotkeys(InfoWriter *writer)
+{
+	init_key_names();
+	
+	// 为每个可能的键创建热键
+	for (int i = 0; i < MAX_KEYS; i++) {
+		if (key_names[i]) {
+			std::string hotkey_name = "InfoWriter.KeyPress.";
+			hotkey_name += key_names[i];
+			
+			std::string hotkey_desc = "Record key press: ";
+			hotkey_desc += key_names[i];
+			
+			key_hotkeys[i] = obs_hotkey_register_frontend(
+				hotkey_name.c_str(),
+				hotkey_desc.c_str(),
+				key_callback,
+				writer);
+		}
+	}
+}
+
+// 在插件卸载时注销所有热键
+static void unregister_all_key_hotkeys()
+{
+	for (int i = 0; i < MAX_KEYS; i++) {
+		if (key_hotkeys[i]) {
+			obs_hotkey_unregister(key_hotkeys[i]);
+			key_hotkeys[i] = OBS_INVALID_HOTKEY_ID;
+		}
+	}
+}
+
+#ifdef _WIN32
+// 全局钩子句柄
+static HHOOK keyboard_hook = NULL;
+static InfoWriter *global_writer = NULL;
+
+// 键盘钩子回调
+LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
+{
+	if (nCode >= 0 && global_writer && global_writer->HasStarted()) {
+		if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) {
+			KBDLLHOOKSTRUCT *kbStruct = (KBDLLHOOKSTRUCT*)lParam;
+			DWORD vkCode = kbStruct->vkCode;
+			
+			// 将虚拟键码转换为可读字符
+			char keyName[16] = {0};
+			GetKeyNameTextA(kbStruct->scanCode << 16, keyName, sizeof(keyName));
+			
+			std::string message = "Key pressed: ";
+			message += (keyName[0] != 0) ? keyName : std::to_string(vkCode);
+			
+			// 记录按键到文件
+			global_writer->WriteInfo(message);
+		}
+	}
+	
+	// 调用下一个钩子
+	return CallNextHookEx(keyboard_hook, nCode, wParam, lParam);
+}
+
+// 安装全局键盘钩子
+static void install_global_keyboard_hook(InfoWriter *writer)
+{
+	if (keyboard_hook == NULL) {
+		global_writer = writer;
+		keyboard_hook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardProc, 
+										GetModuleHandle(NULL), 0);
+	}
+}
+
+// 卸载全局键盘钩子
+static void uninstall_global_keyboard_hook()
+{
+	if (keyboard_hook != NULL) {
+		UnhookWindowsHookEx(keyboard_hook);
+		keyboard_hook = NULL;
+		global_writer = NULL;
+	}
+}
+#endif
 
 bool obstudio_infowriter_syncnameandpathwithvideo_property_modified(
 	obs_properties_t *props, obs_property_t *property, obs_data_t *settings)
@@ -308,6 +458,10 @@ void *obstudio_infowriter_create(obs_data_t *settings, obs_source_t *source)
 	obs_frontend_add_event_callback(
 		obsstudio_infowriter_frontend_event_callback, Writer);
 
+	// 初始化键盘监听
+	memset(key_hotkeys, 0, sizeof(key_hotkeys));
+	register_all_key_hotkeys(Writer);
+
 	return Writer;
 }
 
@@ -397,6 +551,10 @@ obs_properties_t *obstudio_infowriter_properties(void *unused)
 		obs_module_text(
 			"Log hotkey specifics (applies to default output)"));
 
+	// 添加全局键盘记录选项
+	obs_properties_add_bool(props, "record_all_keys", 
+						   obs_module_text("Record all keyboard presses"));
+
 	return props;
 }
 
@@ -444,6 +602,9 @@ void obstudio_infowriter_get_defaults(obs_data_t *settings)
 				  true);
 	obs_data_set_default_bool(settings, setting_shouldloghotkeyspecifics,
 				  true);
+
+	// 默认不启用全局键盘记录
+	obs_data_set_default_bool(settings, "record_all_keys", false);
 }
 
 void obstudio_infowriter_update(void *data, obs_data_t *settings)
@@ -519,6 +680,20 @@ void obstudio_infowriter_update(void *data, obs_data_t *settings)
 		obs_data_get_bool(settings, setting_shouldlogabsolutetime));
 	WriterSettings->SetShouldLogHotkeySpecifics(
 		obs_data_get_bool(settings, setting_shouldloghotkeyspecifics));
+
+	// 读取是否启用全局键盘记录
+	bool record_all_keys = obs_data_get_bool(settings, "record_all_keys");
+	
+	// 根据设置启用或禁用键盘记录
+	static bool keys_registered = false;
+	
+	if (record_all_keys && !keys_registered) {
+		register_all_key_hotkeys(g_infoWriter);
+		keys_registered = true;
+	} else if (!record_all_keys && keys_registered) {
+		unregister_all_key_hotkeys();
+		keys_registered = false;
+	}
 }
 
 uint32_t obstudio_infowriter_get_width(void *data)
@@ -545,6 +720,9 @@ void obstudio_infowriter_destroy(void *data)
 
 		obs_frontend_remove_event_callback(
 			obsstudio_infowriter_frontend_event_callback, Writer);
+
+		// 注销键盘监听
+		unregister_all_key_hotkeys();
 
 		delete Writer;
 	}
@@ -581,4 +759,8 @@ bool obs_module_load(void)
 	return true;
 }
 
-void obs_module_unload(void) {}
+void obs_module_unload(void)
+{
+	// 注销键盘监听
+	unregister_all_key_hotkeys();
+}

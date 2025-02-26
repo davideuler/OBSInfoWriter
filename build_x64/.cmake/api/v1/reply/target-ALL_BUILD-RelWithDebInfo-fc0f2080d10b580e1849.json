@@ -17,10 +17,10 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "OBSInfoWriter::@6890427a1f51a3e7e1df"
+			"id" : "Groundfloor::@8bc3218c9d2e05852978"
 		},
 		{
-			"id" : "Groundfloor::@8bc3218c9d2e05852978"
+			"id" : "OBSInfoWriter::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "Jumpropes::@42ac850ce78ce1f82442"

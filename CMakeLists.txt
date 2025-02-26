@@ -38,6 +38,7 @@ target_sources(
           OutputFormat/OutputFormat.CSV.cpp
           OutputFormat/OutputFormat.EDL.cpp
           OutputFormat/OutputFormat.Default.cpp
+          OutputFormat/OutputFormat.UserInput.cpp
           InfoWriter.cpp
           InfoWriterSettings.cpp
           OBSStudioInfoWriter.cpp)

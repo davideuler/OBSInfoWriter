@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <Groundfloor/Molecules/String.h>
 #include "OutputFormat.h"
+#include "Event.h"
 #include <memory>
 
 enum InfoMediaType {
@@ -37,6 +38,7 @@ private:
 	int64_t getPausedTime(const int64_t currentTime) const;
 	void InitCurrentFilename(int64_t timestamp);
 	std::string SecsToHMSString(const int64_t totalseconds) const;
+	std::string SecsToHMSString(const int64_t totalseconds, const int milliseconds) const;
 
 public:
 	InfoWriter();
@@ -48,6 +50,9 @@ public:
 	void WriteInfo(const InfoHotkey AHotkey) const;
 	void WriteSceneChange(const std::string scenename) const;
 	void MarkStop(const InfoMediaType AType);
+
+	void LogKeyEvent(const Event &event);
+	void LogMouseEvent(const Event &event);
 
 	bool HasStarted() const;
 	bool IsStreaming() const;

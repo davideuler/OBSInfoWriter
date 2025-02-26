@@ -7,11 +7,15 @@
 #include <cmath>
 #include <memory>
 #include <regex>
+#include <chrono>
+#include <iomanip>
+#include <sstream>
 
 #include "OutputFormat/OutputFormat.Default.h"
 #include "OutputFormat/OutputFormat.EDL.h"
 #include "OutputFormat/OutputFormat.CSV.h"
 #include "OutputFormat/OutputFormat.SRT.h"
+#include "OutputFormat/OutputFormat.UserInput.h"
 
 InfoWriter* g_infoWriter = nullptr;
 
@@ -36,6 +40,10 @@ std::string InfoWriter::SecsToHMSString(const int64_t totalseconds) const
 	uint32_t min = (uint32_t)trunc(totalseconds / 60.0) - (hr * 60);
 	uint32_t sec = totalseconds % 60;
 
+	// 获取当前时间的毫秒部分
+	auto now = std::chrono::system_clock::now();
+	auto now_ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count() % 1000;
+
 	std::string format = Settings.GetFormat();
 	std::string replacement = "\t";
 	std::regex tabregex("(\\\\t)");
@@ -45,7 +53,33 @@ std::string InfoWriter::SecsToHMSString(const int64_t totalseconds) const
 	char buffer[1024];
 	sprintf(&buffer[0], format.c_str(), hr, min, sec);
 
-	return buffer;
+	// 添加毫秒信息
+	std::stringstream ss;
+	ss << buffer << ":" << std::setfill('0') << std::setw(3) << now_ms;
+
+	return ss.str();
+}
+
+std::string InfoWriter::SecsToHMSString(const int64_t totalseconds, const int milliseconds) const
+{
+	uint32_t hr = (uint32_t)trunc(totalseconds / 60.0 / 60.0);
+	uint32_t min = (uint32_t)trunc(totalseconds / 60.0) - (hr * 60);
+	uint32_t sec = totalseconds % 60;
+
+	std::string format = Settings.GetFormat();
+	std::string replacement = "\t";
+	std::regex tabregex("(\\\\t)");
+	format = std::regex_replace(format, tabregex, replacement);
+	format += "\0\0\0\0";
+
+	char buffer[1024];
+	sprintf(&buffer[0], format.c_str(), hr, min, sec);
+
+	// 添加毫秒信息
+	std::stringstream ss;
+	ss << buffer << ":" << std::setfill('0') << std::setw(3) << milliseconds;
+
+	return ss.str();
 }
 
 int64_t InfoWriter::getPausedTime(const int64_t currentTime) const
@@ -217,6 +251,9 @@ void InfoWriter::MarkStart(InfoMediaType AType)
 	} else if (outputformat == "srt") {
 		output = std::make_unique<OutputFormatSRT>(Settings,
 							   CurrentFilename);
+	} else if (outputformat == "userinput") {
+		output = std::make_unique<OutputFormatUserInput>(Settings,
+							   CurrentFilename);
 	} else {
 		output = std::make_unique<OutputFormatDefault>(Settings,
 							       CurrentFilename);
@@ -346,4 +383,95 @@ std::string InfoWriter::NowTimeStamp() const
 InfoWriterSettings *InfoWriter::GetSettings()
 {
 	return &Settings;
+}
+
+void InfoWriter::LogKeyEvent(const Event &event)
+{
+	if (output == nullptr)
+		return;
+
+	// 检查输出格式是否为用户输入格式
+	auto outputFormat = dynamic_cast<OutputFormatUserInput*>(output.get());
+	if (outputFormat) {
+		// 获取当前时间
+		auto Now = Groundfloor::GetTimestamp();
+		int64_t timestamp;
+		
+		// 根据当前记录类型选择时间戳
+		if (lastInfoMediaType == imtStream) {
+			timestamp = Now - StartStreamTime;
+		} else {
+			timestamp = Now - StartRecordTime - getPausedTime(Now);
+		}
+		
+		// 根据事件类型记录
+		if (event.type == EVENT_KEY_PRESSED) {
+			outputFormat->LogUserInputEvent(timestamp, "key_pressed", event.toJSON());
+		} else if (event.type == EVENT_KEY_RELEASED) {
+			outputFormat->LogUserInputEvent(timestamp, "key_released", event.toJSON());
+		}
+	} else {
+		// 如果不是用户输入格式，则使用普通文本记录
+		std::string eventInfo;
+		if (event.type == EVENT_KEY_PRESSED) {
+			eventInfo = "Key pressed: code=" + std::to_string(event.key.code) + 
+						", rawcode=" + std::to_string(event.key.rawcode);
+		} else if (event.type == EVENT_KEY_RELEASED) {
+			eventInfo = "Key released: code=" + std::to_string(event.key.code) + 
+						", rawcode=" + std::to_string(event.key.rawcode);
+		}
+		
+		if (!eventInfo.empty()) {
+			WriteInfo(eventInfo);
+		}
+	}
+}
+
+void InfoWriter::LogMouseEvent(const Event &event)
+{
+	if (output == nullptr)
+		return;
+
+	// 检查输出格式是否为用户输入格式
+	auto outputFormat = dynamic_cast<OutputFormatUserInput*>(output.get());
+	if (outputFormat) {
+		// 获取当前时间
+		auto Now = Groundfloor::GetTimestamp();
+		int64_t timestamp;
+		
+		// 根据当前记录类型选择时间戳
+		if (lastInfoMediaType == imtStream) {
+			timestamp = Now - StartStreamTime;
+		} else {
+			timestamp = Now - StartRecordTime - getPausedTime(Now);
+		}
+		
+		// 根据事件类型记录
+		if (event.type == EVENT_MOUSE_PRESSED) {
+			outputFormat->LogUserInputEvent(timestamp, "mouse_pressed", event.toJSON());
+		} else if (event.type == EVENT_MOUSE_RELEASED) {
+			outputFormat->LogUserInputEvent(timestamp, "mouse_released", event.toJSON());
+		} else if (event.type == EVENT_MOUSE_MOVED) {
+			outputFormat->LogUserInputEvent(timestamp, "mouse_moved", event.toJSON());
+		}
+	} else {
+		// 如果不是用户输入格式，则使用普通文本记录
+		std::string eventInfo;
+		if (event.type == EVENT_MOUSE_PRESSED) {
+			eventInfo = "Mouse pressed: x=" + std::to_string(event.mouse.x) + 
+						", y=" + std::to_string(event.mouse.y) + 
+						", button=" + std::to_string(event.mouse.button);
+		} else if (event.type == EVENT_MOUSE_RELEASED) {
+			eventInfo = "Mouse released: x=" + std::to_string(event.mouse.x) + 
+						", y=" + std::to_string(event.mouse.y) + 
+						", button=" + std::to_string(event.mouse.button);
+		} else if (event.type == EVENT_MOUSE_MOVED) {
+			eventInfo = "Mouse moved: x=" + std::to_string(event.mouse.x) + 
+						", y=" + std::to_string(event.mouse.y);
+		}
+		
+		if (!eventInfo.empty()) {
+			WriteInfo(eventInfo);
+		}
+	}
 }

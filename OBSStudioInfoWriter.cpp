@@ -6,6 +6,7 @@
 #include <Groundfloor/Materials/Functions.h>
 #include <Groundfloor/Atoms/Defines.h>
 #include "InfoWriter.h"
+#include "Event.h"
 #include <obs-hotkey.h>
 #include <util/platform.h>
 
@@ -154,25 +155,29 @@ LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
 		KBDLLHOOKSTRUCT *kbStruct = (KBDLLHOOKSTRUCT*)lParam;
 		DWORD vkCode = kbStruct->vkCode;
 		
-		// 将虚拟键码转换为可读字符
-		char keyName[16] = {0};
-		GetKeyNameTextA(kbStruct->scanCode << 16, keyName, sizeof(keyName));
+		// 创建事件对象
+		Event event;
+		event.time = Groundfloor::GetTimestamp();
 		
 		std::string message;
 		
 		if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) {
-			message = "Key pressed: ";
-			message += (keyName[0] != 0) ? keyName : std::to_string(vkCode);
+			event.type = EVENT_KEY_PRESSED;
+			event.key.code = vkCode;
+			event.key.mask = 0; // 可以添加修饰键检测
+			event.key.rawcode = kbStruct->scanCode;
 			
 			// 记录按键到文件
-			global_writer->WriteInfo(message);
+			global_writer->LogKeyEvent(event);
 		}
 		else if (wParam == WM_KEYUP || wParam == WM_SYSKEYUP) {
-			message = "Key released: ";
-			message += (keyName[0] != 0) ? keyName : std::to_string(vkCode);
+			event.type = EVENT_KEY_RELEASED;
+			event.key.code = vkCode;
+			event.key.mask = 0; // 可以添加修饰键检测
+			event.key.rawcode = kbStruct->scanCode;
 			
 			// 记录按键释放到文件
-			global_writer->WriteInfo(message);
+			global_writer->LogKeyEvent(event);
 		}
 	}
 	
@@ -186,49 +191,65 @@ LRESULT CALLBACK MouseProc(int nCode, WPARAM wParam, LPARAM lParam)
 	if (nCode >= 0 && global_writer && global_writer->HasStarted()) {
 		MSLLHOOKSTRUCT *mouseStruct = (MSLLHOOKSTRUCT*)lParam;
 		
-		std::string message;
+		// 创建事件对象
+		Event event;
+		event.time = Groundfloor::GetTimestamp();
 		
 		switch (wParam) {
 			case WM_LBUTTONDOWN:
-				message = "Mouse left button pressed at: X=" + 
-						  std::to_string(mouseStruct->pt.x) + 
-						  ", Y=" + std::to_string(mouseStruct->pt.y);
-				global_writer->WriteInfo(message);
+				event.type = EVENT_MOUSE_PRESSED;
+				event.mouse.x = mouseStruct->pt.x;
+				event.mouse.y = mouseStruct->pt.y;
+				event.mouse.button = 1; // 左键
+				global_writer->LogMouseEvent(event);
 				break;
 				
 			case WM_LBUTTONUP:
-				message = "Mouse left button released at: X=" + 
-						  std::to_string(mouseStruct->pt.x) + 
-						  ", Y=" + std::to_string(mouseStruct->pt.y);
-				global_writer->WriteInfo(message);
+				event.type = EVENT_MOUSE_RELEASED;
+				event.mouse.x = mouseStruct->pt.x;
+				event.mouse.y = mouseStruct->pt.y;
+				event.mouse.button = 1; // 左键
+				global_writer->LogMouseEvent(event);
 				break;
 				
 			case WM_RBUTTONDOWN:
-				message = "Mouse right button pressed at: X=" + 
-						  std::to_string(mouseStruct->pt.x) + 
-						  ", Y=" + std::to_string(mouseStruct->pt.y);
-				global_writer->WriteInfo(message);
+				event.type = EVENT_MOUSE_PRESSED;
+				event.mouse.x = mouseStruct->pt.x;
+				event.mouse.y = mouseStruct->pt.y;
+				event.mouse.button = 2; // 右键
+				global_writer->LogMouseEvent(event);
 				break;
 				
 			case WM_RBUTTONUP:
-				message = "Mouse right button released at: X=" + 
-						  std::to_string(mouseStruct->pt.x) + 
-						  ", Y=" + std::to_string(mouseStruct->pt.y);
-				global_writer->WriteInfo(message);
+				event.type = EVENT_MOUSE_RELEASED;
+				event.mouse.x = mouseStruct->pt.x;
+				event.mouse.y = mouseStruct->pt.y;
+				event.mouse.button = 2; // 右键
+				global_writer->LogMouseEvent(event);
 				break;
 				
 			case WM_MBUTTONDOWN:
-				message = "Mouse middle button pressed at: X=" + 
-						  std::to_string(mouseStruct->pt.x) + 
-						  ", Y=" + std::to_string(mouseStruct->pt.y);
-				global_writer->WriteInfo(message);
+				event.type = EVENT_MOUSE_PRESSED;
+				event.mouse.x = mouseStruct->pt.x;
+				event.mouse.y = mouseStruct->pt.y;
+				event.mouse.button = 3; // 中键
+				global_writer->LogMouseEvent(event);
 				break;
 				
 			case WM_MBUTTONUP:
-				message = "Mouse middle button released at: X=" + 
-						  std::to_string(mouseStruct->pt.x) + 
-						  ", Y=" + std::to_string(mouseStruct->pt.y);
-				global_writer->WriteInfo(message);
+				event.type = EVENT_MOUSE_RELEASED;
+				event.mouse.x = mouseStruct->pt.x;
+				event.mouse.y = mouseStruct->pt.y;
+				event.mouse.button = 3; // 中键
+				global_writer->LogMouseEvent(event);
+				break;
+				
+			case WM_MOUSEMOVE:
+				event.type = EVENT_MOUSE_MOVED;
+				event.mouse.x = mouseStruct->pt.x;
+				event.mouse.y = mouseStruct->pt.y;
+				// 可以选择是否记录鼠标移动事件，这里暂时不记录
+				// global_writer->LogMouseEvent(event);
 				break;
 		}
 	}
@@ -569,33 +590,26 @@ void *obstudio_infowriter_create(obs_data_t *settings, obs_source_t *source)
 	return Writer;
 }
 
-obs_properties_t *obstudio_infowriter_properties(void *unused)
+obs_properties_t *obstudio_infowriter_get_properties(void *data)
 {
-	UNUSED_PARAMETER(unused);
-
 	obs_properties_t *props = obs_properties_create();
 
-	auto list = obs_properties_add_list(props, setting_outputformat,
-					    obs_module_text("Output format"),
-					    OBS_COMBO_TYPE_LIST,
-					    OBS_COMBO_FORMAT_STRING);
-	obs_property_list_add_string(list, "Default", "default");
-	obs_property_list_add_string(list, "CSV", "csv");
-	obs_property_list_add_string(list, "EDL", "edl");
-	obs_property_list_add_string(list, "SRT", "srt");
+	obs_property_t *p = obs_properties_add_bool(
+		props, setting_syncnameandpathwithvideo,
+		obs_module_text("Sync name and path with video recording"));
+	obs_property_set_modified_callback(
+		p, obstudio_infowriter_syncnameandpathwithvideo_property_modified);
+
+	obs_properties_add_path(props, setting_file,
+				obs_module_text("Log file"), OBS_PATH_FILE_SAVE,
+				logfile_filter, NULL);
+
+	obs_properties_add_text(props, setting_automaticoutputextension,
+				obs_module_text("Automatic output extension"),
+				OBS_TEXT_DEFAULT);
 
 	obs_properties_add_text(props, setting_format,
 				obs_module_text("Format"), OBS_TEXT_DEFAULT);
-	obs_property *prop_syncnameandpathwithvideo =
-		obs_properties_add_bool(props, setting_syncnameandpathwithvideo,
-					"Sync with video file name and path");
-	obs_property_set_modified_callback(
-		prop_syncnameandpathwithvideo,
-		obstudio_infowriter_syncnameandpathwithvideo_property_modified);
-	obs_properties_add_text(props, setting_automaticoutputextension,
-				"Automatic file extension", OBS_TEXT_DEFAULT);
-	obs_properties_add_path(props, setting_file, obs_module_text("Logfile"),
-				OBS_PATH_FILE_SAVE, logfile_filter, NULL);
 
 	obs_properties_add_text(props, setting_hotkey1text,
 				obs_module_text("Hotkey 1 text"),
@@ -640,75 +654,57 @@ obs_properties_t *obstudio_infowriter_properties(void *unused)
 				obs_module_text("Hotkey 14 text"),
 				OBS_TEXT_DEFAULT);
 
-	obs_properties_add_bool(props, setting_shouldlogscenechanges,
-				obs_module_text("Log Scene changes"));
-	obs_properties_add_bool(
-		props, setting_shouldlogstreaming,
-		obs_module_text(
-			"Log Streaming events (applies to default output)"));
-	obs_properties_add_bool(
-		props, setting_shouldlogabsolutetime,
-		obs_module_text(
-			"Log intermediate absolute times (applies to default output)"));
-	obs_properties_add_bool(
-		props, setting_shouldloghotkeyspecifics,
-		obs_module_text(
-			"Log hotkey specifics (applies to default output)"));
+	obs_property_list_add_string(
+		obs_properties_add_list(props, setting_outputformat,
+					obs_module_text("Output format"),
+					OBS_COMBO_TYPE_LIST,
+					OBS_COMBO_FORMAT_STRING),
+		obs_module_text("Default"), "default");
+	obs_property_list_add_string(NULL, obs_module_text("EDL"), "edl");
+	obs_property_list_add_string(NULL, obs_module_text("CSV"), "csv");
+	obs_property_list_add_string(NULL, obs_module_text("SRT"), "srt");
+	obs_property_list_add_string(NULL, obs_module_text("User Input"), "userinput");
 
-	// 添加全局键盘记录选项
-	obs_properties_add_bool(props, "record_all_keys", 
-						   obs_module_text("Record all keyboard presses"));
+	obs_properties_add_bool(props, setting_shouldlogscenechanges,
+				obs_module_text("Log scene changes"));
+	obs_properties_add_bool(props, setting_shouldlogstreaming,
+				obs_module_text("Log streaming"));
+	obs_properties_add_bool(props, setting_shouldlogabsolutetime,
+				obs_module_text("Log absolute time"));
+	obs_properties_add_bool(props, setting_shouldloghotkeyspecifics,
+				obs_module_text("Log hotkey specifics"));
 
 	return props;
 }
 
 void obstudio_infowriter_get_defaults(obs_data_t *settings)
 {
-	obs_data_set_default_string(settings, setting_outputformat, "default");
+	obs_data_set_default_string(settings, setting_file, "infowriter.txt");
+	obs_data_set_default_string(settings, setting_format, "%d:%02d:%02d");
 	obs_data_set_default_bool(settings, setting_syncnameandpathwithvideo,
 				  false);
-	obs_data_set_default_string(settings, setting_automaticoutputextension, "txt");
-	obs_data_set_default_string(settings, setting_file, "log.txt");
-	obs_data_set_default_string(settings, setting_format, "%d:%02d:%02d");
-
-	obs_data_set_default_string(settings, setting_hotkey1text, "");
-	obs_data_set_default_string(settings, setting_hotkey2text,
-				    "Hotkey 2 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey3text,
-				    "Hotkey 3 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey4text,
-				    "Hotkey 4 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey5text,
-				    "Hotkey 5 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey6text,
-				    "Hotkey 6 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey7text,
-				    "Hotkey 7 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey8text,
-				    "Hotkey 8 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey9text,
-				    "Hotkey 9 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey10text,
-				    "Hotkey 10 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey11text,
-				    "Hotkey 11 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey12text,
-				    "Hotkey 12 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey13text,
-				    "Hotkey 13 was pressed");
-	obs_data_set_default_string(settings, setting_hotkey14text,
-				    "Hotkey 14 was pressed");
-
-	obs_data_set_default_bool(settings, setting_shouldlogscenechanges,
-				  true);
-	obs_data_set_default_bool(settings, setting_shouldlogstreaming, false);
-	obs_data_set_default_bool(settings, setting_shouldlogabsolutetime,
-				  true);
+	obs_data_set_default_string(settings, setting_automaticoutputextension,
+				    "txt");
+	obs_data_set_default_string(settings, setting_hotkey1text, "Hotkey 1");
+	obs_data_set_default_string(settings, setting_hotkey2text, "Hotkey 2");
+	obs_data_set_default_string(settings, setting_hotkey3text, "Hotkey 3");
+	obs_data_set_default_string(settings, setting_hotkey4text, "Hotkey 4");
+	obs_data_set_default_string(settings, setting_hotkey5text, "Hotkey 5");
+	obs_data_set_default_string(settings, setting_hotkey6text, "Hotkey 6");
+	obs_data_set_default_string(settings, setting_hotkey7text, "Hotkey 7");
+	obs_data_set_default_string(settings, setting_hotkey8text, "Hotkey 8");
+	obs_data_set_default_string(settings, setting_hotkey9text, "Hotkey 9");
+	obs_data_set_default_string(settings, setting_hotkey10text, "Hotkey 10");
+	obs_data_set_default_string(settings, setting_hotkey11text, "Hotkey 11");
+	obs_data_set_default_string(settings, setting_hotkey12text, "Hotkey 12");
+	obs_data_set_default_string(settings, setting_hotkey13text, "Hotkey 13");
+	obs_data_set_default_string(settings, setting_hotkey14text, "Hotkey 14");
+	obs_data_set_default_string(settings, setting_outputformat, "default");
+	obs_data_set_default_bool(settings, setting_shouldlogscenechanges, true);
+	obs_data_set_default_bool(settings, setting_shouldlogstreaming, true);
+	obs_data_set_default_bool(settings, setting_shouldlogabsolutetime, true);
 	obs_data_set_default_bool(settings, setting_shouldloghotkeyspecifics,
 				  true);
-
-	// 默认不启用全局键盘记录
-	obs_data_set_default_bool(settings, "record_all_keys", false);
 }
 
 void obstudio_infowriter_update(void *data, obs_data_t *settings)
@@ -860,7 +856,7 @@ void obstudio_infowriter_setup()
 	obstudio_infowriter_source.get_width = obstudio_infowriter_get_width;
 	obstudio_infowriter_source.get_height = obstudio_infowriter_get_height;
 	obstudio_infowriter_source.get_properties =
-		obstudio_infowriter_properties;
+		obstudio_infowriter_get_properties;
 	obstudio_infowriter_source.update = obstudio_infowriter_update;
 	obstudio_infowriter_source.load = obstudio_infowriter_update;
 	obstudio_infowriter_source.get_defaults =

@@ -404,21 +404,44 @@ void InfoWriter::LogKeyEvent(const Event &event)
 			timestamp = Now - StartRecordTime - getPausedTime(Now);
 		}
 		
+		// 将键码转换为ASCII字符（如果可能）
+		char asciiChar = (event.key.code >= 32 && event.key.code <= 126) ? 
+						static_cast<char>(event.key.code) : '\0';
+		std::string asciiStr = (asciiChar != '\0') ? 
+						std::string(1, asciiChar) : "non-printable";
+		
+		// 创建包含ASCII信息的JSON
+		std::string jsonWithAscii = event.toJSON();
+		// 在JSON的最后一个}前插入ASCII信息
+		size_t pos = jsonWithAscii.rfind('}');
+		if (pos != std::string::npos) {
+			jsonWithAscii.insert(pos, ", \"ascii\": \"" + asciiStr + "\"");
+		}
+		
 		// 根据事件类型记录
 		if (event.type == EVENT_KEY_PRESSED) {
-			outputFormat->LogUserInputEvent(timestamp, "key_pressed", event.toJSON());
+			outputFormat->LogUserInputEvent(timestamp, "key_pressed", jsonWithAscii);
 		} else if (event.type == EVENT_KEY_RELEASED) {
-			outputFormat->LogUserInputEvent(timestamp, "key_released", event.toJSON());
+			outputFormat->LogUserInputEvent(timestamp, "key_released", jsonWithAscii);
 		}
 	} else {
 		// 如果不是用户输入格式，则使用普通文本记录
 		std::string eventInfo;
+		
+		// 将键码转换为ASCII字符（如果可能）
+		char asciiChar = (event.key.code >= 32 && event.key.code <= 126) ? 
+						static_cast<char>(event.key.code) : '\0';
+		std::string asciiStr = (asciiChar != '\0') ? 
+						std::string(1, asciiChar) : "non-printable";
+		
 		if (event.type == EVENT_KEY_PRESSED) {
 			eventInfo = "Key pressed: code=" + std::to_string(event.key.code) + 
-						", rawcode=" + std::to_string(event.key.rawcode);
+						", rawcode=" + std::to_string(event.key.rawcode) +
+						", ascii='" + asciiStr + "'";
 		} else if (event.type == EVENT_KEY_RELEASED) {
 			eventInfo = "Key released: code=" + std::to_string(event.key.code) + 
-						", rawcode=" + std::to_string(event.key.rawcode);
+						", rawcode=" + std::to_string(event.key.rawcode) +
+						", ascii='" + asciiStr + "'";
 		}
 		
 		if (!eventInfo.empty()) {

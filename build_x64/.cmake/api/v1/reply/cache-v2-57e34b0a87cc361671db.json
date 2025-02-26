@@ -322,18 +322,6 @@
 			"value" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib"
 		},
 		{
-			"name" : "CMAKE_ERROR_DEPRECATED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Whether to issue deprecation errors for macros and functions."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "FALSE"
-		},
-		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
 			"properties" : 
 			[
@@ -1126,42 +1114,6 @@
 			"value" : ""
 		},
 		{
-			"name" : "CMAKE_SUPPRESS_DEVELOPER_ERRORS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Suppress errors that are meant for the author of the CMakeLists.txt files."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
-		},
-		{
-			"name" : "CMAKE_SUPPRESS_DEVELOPER_WARNINGS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Suppress Warnings that are meant for the author of the CMakeLists.txt files."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "FALSE"
-		},
-		{
-			"name" : "CMAKE_SYSTEM_VERSION",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : "10.0.18363.657"
-		},
-		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
 			"properties" : 
 			[
@@ -1176,18 +1128,6 @@
 			],
 			"type" : "BOOL",
 			"value" : "FALSE"
-		},
-		{
-			"name" : "CMAKE_WARN_DEPRECATED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Whether to issue warnings for deprecated functionality."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
 		},
 		{
 			"name" : "Crosscables_BINARY_DIR",
@@ -1247,7 +1187,7 @@
 				}
 			],
 			"type" : "BOOL",
-			"value" : "false"
+			"value" : "OFF"
 		},
 		{
 			"name" : "ENABLE_QT",
@@ -1259,7 +1199,7 @@
 				}
 			],
 			"type" : "BOOL",
-			"value" : "false"
+			"value" : "OFF"
 		},
 		{
 			"name" : "FETCHCONTENT_BASE_DIR",
@@ -1403,11 +1343,15 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "OBS Qt version [AUTO, 5, 6]"
+				},
+				{
+					"name" : "STRINGS",
+					"value" : "AUTO;5;6"
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : "6"
+			"type" : "STRING",
+			"value" : "AUTO"
 		},
 		{
 			"name" : "_BUILD_NUMBER_CACHE",

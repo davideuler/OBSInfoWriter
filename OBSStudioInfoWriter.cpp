@@ -159,11 +159,24 @@ LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
 		Event event;
 		event.time = Groundfloor::GetTimestamp();
 		
+		// 获取按键的ASCII码
+		BYTE keyState[256] = {0};
+		GetKeyboardState(keyState);
+		
+		// 设置Shift键状态
+		keyState[VK_SHIFT] = (GetKeyState(VK_SHIFT) & 0x8000) ? 0x80 : 0;
+		keyState[VK_CAPITAL] = (GetKeyState(VK_CAPITAL) & 0x0001) ? 0x01 : 0;
+		
+		// 转换虚拟键码为ASCII
+		WORD ascii = 0;
+		UINT scanCode = kbStruct->scanCode;
+		ToAscii(vkCode, scanCode, keyState, &ascii, 0);
+		
 		std::string message;
 		
 		if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) {
 			event.type = EVENT_KEY_PRESSED;
-			event.key.code = vkCode;
+			event.key.code = ascii ? ascii : vkCode; // 使用ASCII码（如果有）
 			event.key.mask = 0; // 可以添加修饰键检测
 			event.key.rawcode = kbStruct->scanCode;
 			
@@ -172,7 +185,7 @@ LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
 		}
 		else if (wParam == WM_KEYUP || wParam == WM_SYSKEYUP) {
 			event.type = EVENT_KEY_RELEASED;
-			event.key.code = vkCode;
+			event.key.code = ascii ? ascii : vkCode; // 使用ASCII码（如果有）
 			event.key.mask = 0; // 可以添加修饰键检测
 			event.key.rawcode = kbStruct->scanCode;
 			

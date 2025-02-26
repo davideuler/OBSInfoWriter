@@ -49,12 +49,26 @@ struct Event {
                    << "\"keycode\": " << key.code
                    << ", \"mask\": " << key.mask
                    << ", \"rawcode\": " << key.rawcode;
+                
+                // 添加ASCII信息
+                if (key.code >= 32 && key.code <= 126) {
+                    ss << ", \"ascii\": \"" << static_cast<char>(key.code) << "\"";
+                } else {
+                    ss << ", \"ascii\": \"non-printable\"";
+                }
                 break;
             case EVENT_KEY_RELEASED:
                 ss << "key_released\", "
                    << "\"keycode\": " << key.code
                    << ", \"mask\": " << key.mask
                    << ", \"rawcode\": " << key.rawcode;
+                
+                // 添加ASCII信息
+                if (key.code >= 32 && key.code <= 126) {
+                    ss << ", \"ascii\": \"" << static_cast<char>(key.code) << "\"";
+                } else {
+                    ss << ", \"ascii\": \"non-printable\"";
+                }
                 break;
             case EVENT_MOUSE_PRESSED:
                 ss << "mouse_pressed\", "

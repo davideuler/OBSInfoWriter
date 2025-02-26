@@ -687,6 +687,10 @@ obs_properties_t *obstudio_infowriter_get_properties(void *data)
 	obs_properties_add_bool(props, setting_shouldloghotkeyspecifics,
 				obs_module_text("Log hotkey specifics"));
 
+	// 添加记录所有按键的选项
+	obs_properties_add_bool(props, "record_all_keys",
+				obs_module_text("Record all keyboard and mouse events"));
+
 	return props;
 }
 
@@ -718,6 +722,8 @@ void obstudio_infowriter_get_defaults(obs_data_t *settings)
 	obs_data_set_default_bool(settings, setting_shouldlogabsolutetime, true);
 	obs_data_set_default_bool(settings, setting_shouldloghotkeyspecifics,
 				  true);
+	// 设置记录所有按键的默认值为true
+	obs_data_set_default_bool(settings, "record_all_keys", true);
 }
 
 void obstudio_infowriter_update(void *data, obs_data_t *settings)

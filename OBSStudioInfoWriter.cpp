@@ -140,30 +140,119 @@ static void unregister_all_key_hotkeys()
 #ifdef _WIN32
 // 全局钩子句柄
 static HHOOK keyboard_hook = NULL;
+static HHOOK mouse_hook = NULL;
 static InfoWriter *global_writer = NULL;
+
+// 前向声明
+static void install_global_mouse_hook();
+static void uninstall_global_mouse_hook();
 
 // 键盘钩子回调
 LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
 	if (nCode >= 0 && global_writer && global_writer->HasStarted()) {
+		KBDLLHOOKSTRUCT *kbStruct = (KBDLLHOOKSTRUCT*)lParam;
+		DWORD vkCode = kbStruct->vkCode;
+		
+		// 将虚拟键码转换为可读字符
+		char keyName[16] = {0};
+		GetKeyNameTextA(kbStruct->scanCode << 16, keyName, sizeof(keyName));
+		
+		std::string message;
+		
 		if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) {
-			KBDLLHOOKSTRUCT *kbStruct = (KBDLLHOOKSTRUCT*)lParam;
-			DWORD vkCode = kbStruct->vkCode;
-			
-			// 将虚拟键码转换为可读字符
-			char keyName[16] = {0};
-			GetKeyNameTextA(kbStruct->scanCode << 16, keyName, sizeof(keyName));
-			
-			std::string message = "Key pressed: ";
+			message = "Key pressed: ";
 			message += (keyName[0] != 0) ? keyName : std::to_string(vkCode);
 			
 			// 记录按键到文件
+			global_writer->WriteInfo(message);
+		}
+		else if (wParam == WM_KEYUP || wParam == WM_SYSKEYUP) {
+			message = "Key released: ";
+			message += (keyName[0] != 0) ? keyName : std::to_string(vkCode);
+			
+			// 记录按键释放到文件
 			global_writer->WriteInfo(message);
 		}
 	}
 	
 	// 调用下一个钩子
 	return CallNextHookEx(keyboard_hook, nCode, wParam, lParam);
+}
+
+// 鼠标钩子回调
+LRESULT CALLBACK MouseProc(int nCode, WPARAM wParam, LPARAM lParam)
+{
+	if (nCode >= 0 && global_writer && global_writer->HasStarted()) {
+		MSLLHOOKSTRUCT *mouseStruct = (MSLLHOOKSTRUCT*)lParam;
+		
+		std::string message;
+		
+		switch (wParam) {
+			case WM_LBUTTONDOWN:
+				message = "Mouse left button pressed at: X=" + 
+						  std::to_string(mouseStruct->pt.x) + 
+						  ", Y=" + std::to_string(mouseStruct->pt.y);
+				global_writer->WriteInfo(message);
+				break;
+				
+			case WM_LBUTTONUP:
+				message = "Mouse left button released at: X=" + 
+						  std::to_string(mouseStruct->pt.x) + 
+						  ", Y=" + std::to_string(mouseStruct->pt.y);
+				global_writer->WriteInfo(message);
+				break;
+				
+			case WM_RBUTTONDOWN:
+				message = "Mouse right button pressed at: X=" + 
+						  std::to_string(mouseStruct->pt.x) + 
+						  ", Y=" + std::to_string(mouseStruct->pt.y);
+				global_writer->WriteInfo(message);
+				break;
+				
+			case WM_RBUTTONUP:
+				message = "Mouse right button released at: X=" + 
+						  std::to_string(mouseStruct->pt.x) + 
+						  ", Y=" + std::to_string(mouseStruct->pt.y);
+				global_writer->WriteInfo(message);
+				break;
+				
+			case WM_MBUTTONDOWN:
+				message = "Mouse middle button pressed at: X=" + 
+						  std::to_string(mouseStruct->pt.x) + 
+						  ", Y=" + std::to_string(mouseStruct->pt.y);
+				global_writer->WriteInfo(message);
+				break;
+				
+			case WM_MBUTTONUP:
+				message = "Mouse middle button released at: X=" + 
+						  std::to_string(mouseStruct->pt.x) + 
+						  ", Y=" + std::to_string(mouseStruct->pt.y);
+				global_writer->WriteInfo(message);
+				break;
+		}
+	}
+	
+	// 调用下一个钩子
+	return CallNextHookEx(mouse_hook, nCode, wParam, lParam);
+}
+
+// 安装全局鼠标钩子
+static void install_global_mouse_hook()
+{
+	if (mouse_hook == NULL) {
+		mouse_hook = SetWindowsHookEx(WH_MOUSE_LL, MouseProc, 
+									GetModuleHandle(NULL), 0);
+	}
+}
+
+// 卸载全局鼠标钩子
+static void uninstall_global_mouse_hook()
+{
+	if (mouse_hook != NULL) {
+		UnhookWindowsHookEx(mouse_hook);
+		mouse_hook = NULL;
+	}
 }
 
 // 安装全局键盘钩子
@@ -174,6 +263,11 @@ static void install_global_keyboard_hook(InfoWriter *writer)
 		keyboard_hook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardProc, 
 										GetModuleHandle(NULL), 0);
 	}
+	
+#ifdef _WIN32
+	// 同时安装鼠标钩子
+	install_global_mouse_hook();
+#endif
 }
 
 // 卸载全局键盘钩子
@@ -184,6 +278,11 @@ static void uninstall_global_keyboard_hook()
 		keyboard_hook = NULL;
 		global_writer = NULL;
 	}
+	
+#ifdef _WIN32
+	// 同时卸载鼠标钩子
+	uninstall_global_mouse_hook();
+#endif
 }
 #endif
 
